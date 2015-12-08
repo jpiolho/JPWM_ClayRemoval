@@ -186,7 +186,7 @@ public class ClayRemovalMod implements WurmMod,PreInitable,ItemTemplatesCreatedL
             return;
         }
         
-        if(parent == null || parent.getTemplateId() == iidDecayBed)
+        if(parent == null || parent.getTemplateId() != iidDecayBed)
             return;
         
         if(!parent.isOnSurface())
@@ -213,6 +213,8 @@ public class ClayRemovalMod implements WurmMod,PreInitable,ItemTemplatesCreatedL
                 if (volumepercent > 1.0f) volumepercent = 1.0f;
 
                 int totalChance = (int)Math.ceil((village == null ? percentWeight : percentVillageWeight) * weightpercent) + (int)Math.ceil((village == null ? percentVolume : percentVillageVolume) * volumepercent);
+                
+                logger.log(Level.INFO,"Change: " + chance + " | Total Chance: " + totalChance);
                 
                 if(chance <= totalChance) {
 
