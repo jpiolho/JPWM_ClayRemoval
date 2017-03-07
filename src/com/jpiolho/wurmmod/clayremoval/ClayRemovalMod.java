@@ -114,7 +114,7 @@ public class ClayRemovalMod implements WurmMod,PreInitable,ItemTemplatesCreatedL
                         if(i == 0) {
                             method.insertAt(m.getLineNumber(), "{" +
                                                                 "if(this.getTemplateId() == com.jpiolho.wurmmod.clayremoval.ClayRemovalMod.iidDecayBed) {" +
-                                                                    "if(this.isEmpty()) builder.append(\"empty.\"); else builder.append(\"full.\");" +
+                                                                    "if(this.isEmpty(false)) builder.append(\"empty.\"); else builder.append(\"full.\");" +
                                                                 "}" +
                                                                "}");
                         }
